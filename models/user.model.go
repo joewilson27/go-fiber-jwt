@@ -65,6 +65,8 @@ type ErrorResponse struct {
 	Value string `json:"value,omitempty"`
 }
 
+// [T any]: The use of generics, where T is a type parameter constrained to be of any type (any).
+// (payload T): The function takes a parameter named payload of type T.
 func ValidateStruct[T any](payload T) []*ErrorResponse {
 	var errors []*ErrorResponse
 	err := validate.Struct(payload)
